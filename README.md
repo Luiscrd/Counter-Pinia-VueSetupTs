@@ -1,7 +1,7 @@
 <p align="center">
-  <img alt="Angular" src="https://pinia.vuejs.org/logo.svg" width="150">
-  <img alt="Angular" src="https://blr.vue.community/logo.png" width="300">
-  <img alt="Angular" src="https://miro.medium.com/max/610/1*FIL7OY2C71HPz9vNVeHsAw.png" width="200">
+  <img alt="Pinia" src="https://pinia.vuejs.org/logo.svg" width="150">
+  <img alt="Vue" src="https://blr.vue.community/logo.png" width="300">
+  <img alt="Ts" src="https://miro.medium.com/max/610/1*FIL7OY2C71HPz9vNVeHsAw.png" width="200">
 </p>
 
 # PiniaApp
