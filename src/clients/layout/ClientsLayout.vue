@@ -11,5 +11,7 @@
 </template>
 
 <style scoped>
-
+h1 {
+    color: rgb(9, 183, 15);;
+}
 </style>

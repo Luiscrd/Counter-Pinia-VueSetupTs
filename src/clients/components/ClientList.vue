@@ -65,4 +65,5 @@ tbody tr:hover {
     background: rgb(49, 49, 49);
     color: rgb(255, 255, 255);
 }
+
 </style>

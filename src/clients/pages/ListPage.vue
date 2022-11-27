@@ -10,7 +10,7 @@ const { clients, totalPages, currentPage, getPages } = useCLientd();
 
 <template>
     <div>
-        <h3>Listado Clientes</h3>
+        <h2>Listado Clientes</h2>
         <hr>
         <ClientList route="/client/" :clients="clients" />
         <PaginationNumbers :current-page="currentPage" :total-pages="totalPages" @page-changed="getPages" />
@@ -19,5 +19,7 @@ const { clients, totalPages, currentPage, getPages } = useCLientd();
 </template>
 
 <style scoped>
-
+h2 {
+    color: #ffc107;
+}
 </style>

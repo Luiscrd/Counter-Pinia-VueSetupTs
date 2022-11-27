@@ -50,23 +50,23 @@ watch(totalPages, () => {
 
 <style scoped>
 .pagination {
-    --bs-pagination-color: #e0dede;
+    --bs-pagination-color: #ffc107;
     --bs-pagination-bg: transparent;
     --bs-pagination-border-width: 1px;
-    --bs-pagination-border-color: #848484;
+    --bs-pagination-border-color: #ffc107;
     --bs-pagination-border-radius: 0.375rem;
     --bs-pagination-hover-color: #151515;
-    --bs-pagination-hover-bg: #848484;
-    --bs-pagination-hover-border-color: #848484;
+    --bs-pagination-hover-bg: #ffc107;
+    --bs-pagination-hover-border-color: #ffc107;
     --bs-pagination-focus-color: #ffffff;
     --bs-pagination-focus-bg: #848484;
     --bs-pagination-focus-box-shadow: none;
     --bs-pagination-active-color: #151515;
-    --bs-pagination-active-bg: #848484;
-    --bs-pagination-active-border-color: #848484;
+    --bs-pagination-active-bg: #ffc107;
+    --bs-pagination-active-border-color: #ffc107;
     --bs-pagination-disabled-color: #151515;
-    --bs-pagination-disabled-bg: #525252;
-    --bs-pagination-disabled-border-color: #525252;
+    --bs-pagination-disabled-bg: #b48700;
+    --bs-pagination-disabled-border-color: #b48700;
 }
 
 a {
