@@ -7,8 +7,8 @@
 ```
 npm install -g json-server
 ```
-## Ejecutar server dentro de esta carpeta:
+## Ejecutar server:
 
 ```
-json-server --watch clients-db.json
+npm run backend-server
 ```
