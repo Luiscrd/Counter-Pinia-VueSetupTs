@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { useRouter } from 'vue-router';
+// import { useRouter } from 'vue-router';
 
 interface Props {
     isLoading: boolean,
@@ -9,11 +9,11 @@ interface Props {
 
 const props = defineProps<Props>();
 
-const router = useRouter();
+// const router = useRouter();
 
-const returnBy = () => {
-    router.push('/client/list');
-}
+// const returnBy = () => {
+//     router.push('/client/list');
+// }
 
 </script>
 
@@ -29,7 +29,7 @@ const returnBy = () => {
             <img src="@/assets/caution.gif" class="alert" alt="Alert">
             <h3>Ocurrio un error</h3>
             <h4>{{ error }}</h4>
-            <button type="button" class="btn btn-outline-warning" @click="returnBy()">Ir a lista</button>
+            <!-- <button type="button" class="btn btn-outline-warning" @click="returnBy()">Ir a lista</button> -->
         </div>
     </div>
 </template>

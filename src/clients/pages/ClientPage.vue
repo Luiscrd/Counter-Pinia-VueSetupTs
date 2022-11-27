@@ -6,6 +6,7 @@ import { useRoute, useRouter } from 'vue-router';
 import { useMutation, useQueryClient } from '@tanstack/vue-query';
 import type { Client } from '@/clients/interfaces/client.interface';
 import clientApi from '@/api/clients-api';
+import { watch } from 'vue';
 
 const route = useRoute();
 
@@ -37,6 +38,19 @@ const updateClient = async (client: Client): Promise<Client> => {
 }
 
 const clientMutation = useMutation(updateClient);
+
+watch(isError, () => {
+
+    if (isError.value) {
+
+        setTimeout(() => {
+
+            router.replace('/client/list');
+            
+        }, 3000);
+    }
+
+})
 
 const goTo = () => {
 
