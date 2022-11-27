@@ -1,43 +1,14 @@
 <script setup lang='ts'>
-import Swal from 'sweetalert2';
 import useCLient from '@/clients/composables/useClient';
 import LoadingList from '@/shared/components/LoadingList.vue';
 import { useRoute, useRouter } from 'vue-router';
-import { useMutation, useQueryClient } from '@tanstack/vue-query';
-import type { Client } from '@/clients/interfaces/client.interface';
-import clientApi from '@/api/clients-api';
 import { watch } from 'vue';
 
 const route = useRoute();
 
-const { isError, isLoading, client, error } = useCLient(+route.params.id);
+const { isError, isLoading, client, error, clientMutation } = useCLient(+route.params.id);
 
 const router = useRouter();
-
-const queryClient = useQueryClient();
-
-const updateClient = async (client: Client): Promise<Client> => {
-
-    const { data } = await clientApi.patch<Client>(`/clients/${client.id}`, client);
-
-    const queris = queryClient.getQueryCache().findAll(['clients?page='],{exact: false})
-
-    queris.forEach(query => query.reset());
-
-    Swal.fire({
-        icon: 'success',
-        title: 'Guardado',
-        text: 'Usuariio Actualizado',
-        confirmButtonColor: 'rgb(9, 183, 15)',
-    })
-
-    goTo();
-
-    return data;
-
-}
-
-const clientMutation = useMutation(updateClient);
 
 watch(isError, () => {
 
