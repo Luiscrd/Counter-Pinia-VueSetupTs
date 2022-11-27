@@ -22,9 +22,9 @@ const useCLient = (id: number) => {
 
     watch(data, () => {
 
-        if (data.value) client.value = data.value;
-        
-    })
+        if (data.value) client.value = {...data.value};
+
+    }, {immediate: true})
 
     return {
         isLoading,

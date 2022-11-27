@@ -24,7 +24,7 @@ const goTo = (id: number) => {
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nombre</th>
-                <!-- <th scope="col">Foto</th> -->
+                <th scope="col">Foto</th>
                 <th scope="col">Edad</th>
                 <th scope="col">Estado</th>
             </tr>
@@ -33,9 +33,9 @@ const goTo = (id: number) => {
             <tr v-for="client of props.clients" :key="client.id" @click="goTo(client.id)">
                 <th scope="row">{{ client.id }}</th>
                 <td>{{ client.name }}</td>
-                <!-- <td>
+                <td>
                     <img :src="client.picture" :alt="client.name">
-                </td> -->
+                </td>
                 <td>{{ client.age }}</td>
                 <td>
                     <span v-if="client.isActive" class="badge text-bg-success">Activo</span>
