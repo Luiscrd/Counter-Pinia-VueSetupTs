@@ -1,3 +1,15 @@
+<p align="center">
+  <img alt="Angular" src="https://pinia.vuejs.org/logo.svg" width="150">
+</p>
+
+<p align="center">
+  <img alt="Angular" src="https://blr.vue.community/logo.png" width="300">
+</p>
+
+<p align="center">
+  <img alt="Angular" src="https://miro.medium.com/max/610/1*FIL7OY2C71HPz9vNVeHsAw.png" width="200">
+</p>
+
 # PiniaApp
 
 This template should help get you started developing with Vue 3 in Vite.
