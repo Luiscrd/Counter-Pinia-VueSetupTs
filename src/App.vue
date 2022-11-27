@@ -7,9 +7,9 @@ import IconPiniaVue from '@/shared/components/icons/IconPinia.vue';
   <header>
     <IconPiniaVue />
     <div class="wrapper">
-      <h3>Pinia - Ejercicios</h3>
+      <h3>Pinia - Clientes</h3>
       <nav>
-        <RouterLink to="/options">Counter Options</RouterLink>
+        <!-- <RouterLink to="/options">Counter Options</RouterLink> -->
         <RouterLink to="/setup">Counter Setup</RouterLink>
         <RouterLink to="/client/list">Clientes</RouterLink>
       </nav>
