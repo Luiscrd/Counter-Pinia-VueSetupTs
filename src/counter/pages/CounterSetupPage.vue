@@ -10,7 +10,7 @@ const { count, squareCount } = storeToRefs(counterOptions);
 
 const value = ref<number>(2);
 
-const { increment, incrementBy } = counterOptions;
+const { increment, incrementBy, reset } = counterOptions;
 
 </script>
 
@@ -26,7 +26,7 @@ const { increment, incrementBy } = counterOptions;
             <button class="btn btn-outline-warning" type="button" @click="incrementBy(value)">Incrementar + {{ value
             }}</button>
         </div>
-        <button type="button" class="btn btn-outline-warning btn-reset" @click="counterOptions.$reset()">Reset</button>
+        <button type="button" class="btn btn-outline-warning btn-reset" @click="reset()">Reset</button>
         <CounterSetupValue />
     </div>
 </template>

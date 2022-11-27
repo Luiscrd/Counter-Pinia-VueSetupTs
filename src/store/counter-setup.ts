@@ -5,7 +5,7 @@ export const useCounterSetupStore = defineStore('counterSetup', () => {
 
     const count = ref<number>(0);
 
-    const lastChange = ref<string>();
+    const lastChange = ref<string | undefined>();
 
     const squareCount = computed(() => count.value * count.value);
 
@@ -19,12 +19,18 @@ export const useCounterSetupStore = defineStore('counterSetup', () => {
 
     const increment = () => incrementBy(1);
 
+    const reset = () => {
+        count.value = 0;
+        lastChange.value = undefined;
+    }
+
     return {
         count,
         lastChange,
         squareCount,
         increment,
-        incrementBy
+        incrementBy,
+        reset
     }
 
 })
