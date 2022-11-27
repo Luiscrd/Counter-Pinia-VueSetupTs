@@ -9,6 +9,8 @@ const { count, squareCount } = storeToRefs(counterOptions);
 
 const value = ref<number>(2);
 
+const { increment, incrementBy } = counterOptions;
+
 
 </script>
 
@@ -22,12 +24,12 @@ const value = ref<number>(2);
             <button
                 class="btn btn-outline-warning"
                 type="button"
-                @click="counterOptions.increment()">Incrementar + 1</button>
+                @click="increment()">Incrementar + 1</button>
             <input type="number" class="form-control" placeholder="Introduce cantidad" v-model="value">
             <button
                 class="btn btn-outline-warning"
                 type="button"
-                @click="counterOptions.incrementBy(value)">Incrementar + {{ value }}</button>
+                @click="incrementBy(value)">Incrementar + {{ value }}</button>
         </div>
         <button
             type="button"
