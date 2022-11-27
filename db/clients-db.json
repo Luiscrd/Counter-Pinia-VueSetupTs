@@ -3,7 +3,7 @@
     {
       "id": 1,
       "isActive": false,
-      "picture": "https://via.placeholder.com/150/yellow",
+      "picture": "https://cdn.iconscout.com/icon/free/png-128/avatar-380-456332.png",
       "age": 29,
       "eyeColor": "brown",
       "name": "Donovan Bernardo",
@@ -16,7 +16,7 @@
     {
       "id": 2,
       "isActive": false,
-      "picture": "https://via.placeholder.com/150/green",
+      "picture": "https://cdn.iconscout.com/icon/free/png-128/avatar-366-456318.png",
       "age": 62,
       "eyeColor": "brown",
       "name": "Mcclure Rollins",
@@ -29,7 +29,7 @@
     {
       "id": 3,
       "isActive": true,
-      "picture": "https://via.placeholder.com/150/green",
+      "picture": "https://cdn.iconscout.com/icon/free/png-128/avatar-371-456323.png",
       "age": 61,
       "eyeColor": "brown",
       "name": "Leach Workman",
@@ -42,7 +42,7 @@
     {
       "id": 4,
       "isActive": false,
-      "picture": "https://via.placeholder.com/150/green",
+      "picture": "https://cdn.iconscout.com/icon/free/png-128/avatar-378-456330.png",
       "age": 56,
       "eyeColor": "brown",
       "name": "Jeannie Clay",
@@ -55,7 +55,7 @@
     {
       "id": 5,
       "isActive": true,
-      "picture": "https://via.placeholder.com/150/green",
+      "picture": "https://cdn.iconscout.com/icon/free/png-128/avatar-365-456317.png",
       "age": 58,
       "eyeColor": "brown",
       "name": "Coleman Morrison",
@@ -68,7 +68,7 @@
     {
       "id": 6,
       "isActive": true,
-      "picture": "https://via.placeholder.com/150/yellow",
+      "picture": "https://cdn.iconscout.com/icon/free/png-128/avatar-367-456319.png",
       "age": 21,
       "eyeColor": "brown",
       "name": "Barnes Woodward",
@@ -81,7 +81,7 @@
     {
       "id": 7,
       "isActive": true,
-      "picture": "https://via.placeholder.com/150/green",
+      "picture": "https://cdn.iconscout.com/icon/free/png-128/avatar-373-456325.png",
       "age": 26,
       "eyeColor": "blue",
       "name": "Bridges Watson",
@@ -94,8 +94,8 @@
     {
       "id": 8,
       "isActive": false,
-      "picture": "https://via.placeholder.com/150/brown",
-      "age": 38,
+      "picture": "https://cdn.iconscout.com/icon/free/png-128/avatar-377-456329.png",
+      "age": 72,
       "eyeColor": "brown",
       "name": "Janell Roth",
       "gender": "female",
