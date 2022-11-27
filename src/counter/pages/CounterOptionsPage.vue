@@ -16,7 +16,7 @@ const { increment, incrementBy } = counterOptions;
 </script>
 
 <template>
-    <div class="text-center">
+    <div class="text-center mt-4">
         <h1>Counter Options Pinia</h1>
         <hr>
         <h2 class="mb-2">Contador: {{ count }}</h2>
@@ -28,9 +28,7 @@ const { increment, incrementBy } = counterOptions;
             }}</button>
         </div>
         <button type="button" class="btn btn-outline-warning btn-reset" @click="counterOptions.$reset()">Reset</button>
-        <hr>
         <CounterOptionsValue />
-        <hr>
     </div>
 </template>
 
