@@ -23,6 +23,10 @@ export const useClientsStore = defineStore('clientsSetup', () => {
         setPge(page: number) {
 
             if (currentPage.value === page) return;
+            
+            if (currentPage.value === 1 && page === 0) return;
+            
+            if (page > totalPages.value) return; 
 
             currentPage.value = page;
 

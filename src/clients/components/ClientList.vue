@@ -1,8 +1,9 @@
 <script setup lang='ts'>
 import { useRouter } from 'vue-router';
 import useCLientd from '@/clients/composables/useClients';
+import PaginationNumbers from '@/clients/components/PaginationNumbers.vue';
 
-const { isError, isLoading } = useCLientd();
+const { isError, isLoading, clients } = useCLientd();
 
 const router = useRouter();
 
@@ -14,20 +15,19 @@ const goTo = (id: number) => {
 </script>
 
 <template>
-     <!-- <div class="loading">
+    <div v-if="isLoading" class="loading">
         <h1>Loading</h1>
         <img src="@/assets/loading.gif" class="bomb spin" alt="Bomb">
         <h3>Espere por favor...</h3>
-    </div> -->
-    <!-- <div v-if="hasError" class="error">
-        <div class="error-int fade">
+    </div>
+    <div v-if="isError" class="error">
+        <div class="error-int">
             <h1>WARNING</h1>
-            <img src="@/assets/skull.png" class="alert" alt="Alert">
+            <img src="@/assets/caution.gif" class="alert" alt="Alert">
             <h3>Ocurrio un error</h3>
-            <h4>{{ errorMessage }}</h4>
         </div>
-    </div> -->
-    <table class="table">
+    </div>
+    <table class="table" v-if="clients.length > 1">
         <thead>
             <tr>
                 <th scope="col">Id</th>
@@ -37,30 +37,20 @@ const goTo = (id: number) => {
             </tr>
         </thead>
         <tbody>
-            <tr @click="goTo(1)">
-                <th scope="row">1</th>
+            <tr v-for="client of clients" :key="client.id" @click="goTo(client.id)">
+                <th scope="row">{{ client.id }}</th>
                 <td>
-                    <img src="https://cdn.iconscout.com/icon/free/png-128/avatar-380-456332.png" alt="Avatar">
+                    <img :src="client.picture" :alt="client.name">
                 </td>
-                <td>Donovan Bernardo</td>
+                <td>{{ client.name }}</td>
                 <td>
-                    <span class="badge text-bg-danger">Inactivo</span>
-                    <!-- <span class="badge text-bg-success">Activo</span> -->
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>
-                    <img src="https://cdn.iconscout.com/icon/free/png-128/avatar-366-456318.png" alt="Avatar">
-                </td>
-                <td>Mcclure Rollins</td>
-                <td>
-                    <!-- <span class="badge text-bg-danger">Inactivo</span> -->
-                    <span class="badge text-bg-success">Activo</span>
+                    <span v-if="client.isActive" class="badge text-bg-success">Activo</span>
+                    <span v-else class="badge text-bg-danger">Inactivo</span>
                 </td>
             </tr>
         </tbody>
     </table>
+    <PaginationNumbers />
 </template>
 
 <style scoped>
@@ -68,14 +58,21 @@ table {
     color: gray;
     vertical-align: middle;
 }
+
 img {
-    width: 70px;
+    width: 60px;
     border-radius: 100%;
 }
 
 .loading img {
     width: 300px;
 }
+
+.error img {
+    width: 300px;
+    filter: brightness(2000%);
+}
+
 
 tbody tr {
     cursor: pointer;
@@ -101,12 +98,14 @@ tbody tr:hover {
     align-items: center;
     flex-direction: column;
 }
+
 .error-int {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
 h3 {
     margin-bottom: 30px;
 }
