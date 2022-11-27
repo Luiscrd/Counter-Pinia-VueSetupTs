@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import LoadingList from '@/shared/components/LoadingList.vue';
+// import LoadingList from '@/shared/components/LoadingList.vue';
 
 
 </script>
