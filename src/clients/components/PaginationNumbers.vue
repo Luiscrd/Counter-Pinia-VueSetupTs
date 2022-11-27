@@ -1,34 +1,47 @@
 <script setup lang='ts'>
-import useCLientd from '../composables/useClients';
+import { toRef, ref, watch } from 'vue';
 
-const { getPages, totalPagesNumber, currentPage } = useCLientd();
+interface Props {
+    totalPages: number,
+    currentPage: number,
+}
+
+interface Emits {
+    (e: 'pageChanged', page: number): void,
+}
+
+const props = defineProps<Props>();
+
+const emits = defineEmits<Emits>();
+
+const currentPage = toRef(props, 'currentPage');
+
+const totalPages = toRef(props, 'totalPages');
+
+const totalPagesNumber = ref<number[]>([]);
+
+watch(totalPages, () => {
+
+    totalPagesNumber.value = [...new Array(totalPages.value)].map((v, i) => i + 1);
+
+}, { immediate: true });
+
 
 </script>
 
 <template>
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center mt-5 mb-5">
-            <li
-                class="page-item"
-                :class="{disabled: currentPage <= 1}"
-                @click="getPages(currentPage -1)"
-                >
+            <li class="page-item" :class="{ disabled: currentPage <= 1 }"
+                @click="emits('pageChanged', currentPage - 1)">
                 <a class="page-link">Previous</a>
             </li>
-            <li
-                v-for="page of totalPagesNumber"
-                :class="{active: currentPage === page}"
-                :key="page"
-                class="page-item"
-                @click="getPages(page)"
-                >
+            <li v-for="page of totalPagesNumber" :class="{ active: currentPage === page }" :key="page" class="page-item"
+                @click="emits('pageChanged', page)">
                 <a class="page-link">{{ page }}</a>
             </li>
-            <li
-                class="page-item"
-                :class="{disabled: currentPage >= totalPagesNumber.length}"
-                @click="getPages(currentPage + 1)"
-                >
+            <li class="page-item" :class="{ disabled: currentPage >= totalPages }"
+                @click="emits('pageChanged', currentPage + 1)">
                 <a class="page-link">Next</a>
             </li>
         </ul>
@@ -59,5 +72,4 @@ const { getPages, totalPagesNumber, currentPage } = useCLientd();
 a {
     cursor: pointer;
 }
-
 </style>
