@@ -1,17 +1,21 @@
 <script setup lang='ts'>
-import useCLientd from '@/clients/composables/useClients';
 
+interface Props {
+    isLoading: boolean
+    isError: boolean
+}
 
-const { isError, isLoading } = useCLientd();
+const props = defineProps<Props>();
+
 </script>
 
 <template>
-   <div v-if="isLoading" class="loading">
+   <div v-if="props.isLoading" class="loading">
         <h1>Loading</h1>
         <img src="@/assets/loading.gif" class="bomb spin" alt="Bomb">
         <h3>Espere por favor...</h3>
     </div>
-    <div v-if="isError" class="error">
+    <div v-if="props.isError" class="error">
         <div class="error-int">
             <h1>WARNING</h1>
             <img src="@/assets/caution.gif" class="alert" alt="Alert">

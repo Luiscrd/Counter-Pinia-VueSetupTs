@@ -7,7 +7,8 @@ import LoadingList from '@/shared/components/LoadingList.vue';
 <template>
     <h2>Pagina Cliente</h2>
     <hr>
-    <LoadingList />
+    <!-- <LoadingList /> -->
+    <img src="https://cdn.iconscout.com/icon/free/png-128/avatar-370-456322.png" alt="Avatar">
     <form>
         <div class="mb-3 row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Nombre</label>
@@ -70,10 +71,13 @@ import LoadingList from '@/shared/components/LoadingList.vue';
         <div class="mb-3 row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Imagen</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Introduce url de imagen valido...">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Introduce url valido...">
+                    <button class="btn btn-outline-warning" type="button" id="button-addon2">Validar</button>
+                </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-outline-warning">Guaradr</button>
+        <button type="submit" class="btn btn-outline-warning save">Guaradr</button>
     </form>
 </template>
 
@@ -101,19 +105,25 @@ import LoadingList from '@/shared/components/LoadingList.vue';
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgba(4, 165, 10, 0.25);
 }
+
 .form-select {
     color: #212529;
     background-color: rgb(236, 233, 233);
     border: 1px solid #a0a0a0;
 }
 
-button {
+.save {
     width: 100%;
     margin-top: 5px;
+    margin-bottom: 30px;
 }
 
 h2 {
     color: #ffc107;
 }
 
+img {
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
 </style>

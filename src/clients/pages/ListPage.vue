@@ -4,7 +4,7 @@ import PaginationNumbers from '@/clients/components/PaginationNumbers.vue';
 import LoadingList from '@/shared/components/LoadingList.vue';
 import useCLientd from '@/clients/composables/useClients';
 
-const { clients, totalPages, currentPage, getPages } = useCLientd();
+const { clients, totalPages, currentPage, getPages, isLoading, isError } = useCLientd();
 
 </script>
 
@@ -12,9 +12,9 @@ const { clients, totalPages, currentPage, getPages } = useCLientd();
     <div>
         <h2>Listado Clientes</h2>
         <hr>
-        <ClientList route="/client/" :clients="clients" />
+        <ClientList v-if="!isLoading" route="/client/" :clients="clients" />
         <PaginationNumbers :current-page="currentPage" :total-pages="totalPages" @page-changed="getPages" />
-        <LoadingList />
+        <LoadingList :is-error="isError" :is-loading="isLoading" />
     </div>
 </template>
 
