@@ -21,7 +21,7 @@ const useCLientd = () => {
 
     const { currentPage, clients, totalPages } = storeToRefs(store);
 
-    const { isError, isLoading, data } = useQuery(
+    const { isError, isLoading, data, error } = useQuery(
         ['clients?page=', currentPage],
         () => getClients(currentPage.value),
        
@@ -33,6 +33,7 @@ const useCLientd = () => {
 
     return {
         isError,
+        error,
         isLoading,
         clients,
         loading: store.loading,

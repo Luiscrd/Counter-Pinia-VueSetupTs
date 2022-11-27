@@ -15,7 +15,7 @@ const useCLient = (id: number) => {
 
     const client = ref<Client>();
 
-    const { isError, isLoading, data } = useQuery(
+    const { isError, isLoading, data, error } = useQuery(
         ['client', id],
         () => getClient(id),
     );
@@ -29,6 +29,7 @@ const useCLient = (id: number) => {
     return {
         isLoading,
         isError,
+        error,
         client
     }
 

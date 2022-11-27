@@ -1,5 +1,4 @@
 <script setup lang='ts'>
-import LoadingUser from '@/shared/components/LoadingUser.vue';
 import Swal from 'sweetalert2';
 import useCLient from '@/clients/composables/useClient';
 import LoadingList from '@/shared/components/LoadingList.vue';
@@ -10,7 +9,7 @@ import clientApi from '@/api/clients-api';
 
 const route = useRoute();
 
-const { isError, isLoading, client } = useCLient(+route.params.id);
+const { isError, isLoading, client, error } = useCLient(+route.params.id);
 
 const router = useRouter();
 
@@ -47,10 +46,9 @@ const goTo = () => {
 </script>
 
 <template>
-    <LoadingUser :is-error="clientMutation.isError.value" :is-loading="clientMutation.isLoading.value" />
     <h2 v-if="client">{{ client.name }}</h2>
     <hr>
-    <LoadingList :is-error="isError" :is-loading="isLoading" />
+    <LoadingList :is-error="isError" :is-loading="isLoading" :error="error" />
     <img v-if="client" :src="client.picture" :alt="client.name">
     <form v-if="client" @submit.prevent="clientMutation.mutate(client!)">
         <div class="mb-3 row">

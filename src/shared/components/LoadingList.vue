@@ -1,11 +1,19 @@
 <script setup lang='ts'>
+import { useRouter } from 'vue-router';
 
 interface Props {
-    isLoading: boolean
-    isError: boolean
+    isLoading: boolean,
+    isError: boolean,
+    error: any,
 }
 
 const props = defineProps<Props>();
+
+const router = useRouter();
+
+const returnBy = () => {
+    router.push('/client/list');
+}
 
 </script>
 
@@ -20,6 +28,8 @@ const props = defineProps<Props>();
             <h1>WARNING</h1>
             <img src="@/assets/caution.gif" class="alert" alt="Alert">
             <h3>Ocurrio un error</h3>
+            <h4>{{ error }}</h4>
+            <button type="button" class="btn btn-outline-warning" @click="returnBy()">Ir a lista</button>
         </div>
     </div>
 </template>
@@ -55,7 +65,7 @@ const props = defineProps<Props>();
     filter: brightness(2000%);
 }
 
-h3 {
+h3, h4 {
     margin-bottom: 30px;
 }
 </style>

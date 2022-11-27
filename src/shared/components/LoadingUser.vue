@@ -20,6 +20,7 @@ const props = defineProps<Props>();
             <h1>WARNING</h1>
             <img src="@/assets/caution.gif" class="alert" alt="Alert">
             <h3>Ocurrio un error</h3>
+            <h2>Id no valido</h2>
         </div>
     </div>
 </template>
