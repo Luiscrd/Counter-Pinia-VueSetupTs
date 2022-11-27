@@ -9,12 +9,15 @@ export const useClientsStore = defineStore('clientsSetup', () => {
 
     const totalPages = ref<number>(5);
 
+    const loading = ref<boolean>(true);
+
     const clients = ref<Client[]>([]);
 
     return {
         currentPage,
         totalPages,
         clients,
+        loading,
         setClients(newClients: Client[]) {
 
             clients.value = newClients;

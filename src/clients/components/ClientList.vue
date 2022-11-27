@@ -2,8 +2,9 @@
 import { useRouter } from 'vue-router';
 import useCLientd from '@/clients/composables/useClients';
 import PaginationNumbers from '@/clients/components/PaginationNumbers.vue';
+import LoadingList from '@/shared/components/LoadingList.vue';
 
-const { isError, isLoading, clients } = useCLientd();
+const { clients } = useCLientd();
 
 const router = useRouter();
 
@@ -15,19 +16,8 @@ const goTo = (id: number) => {
 </script>
 
 <template>
-    <div v-if="isLoading" class="loading">
-        <h1>Loading</h1>
-        <img src="@/assets/loading.gif" class="bomb spin" alt="Bomb">
-        <h3>Espere por favor...</h3>
-    </div>
-    <div v-if="isError" class="error">
-        <div class="error-int">
-            <h1>WARNING</h1>
-            <img src="@/assets/caution.gif" class="alert" alt="Alert">
-            <h3>Ocurrio un error</h3>
-        </div>
-    </div>
-    <table class="table" v-if="clients.length > 1">
+    <LoadingList />
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col">Id</th>

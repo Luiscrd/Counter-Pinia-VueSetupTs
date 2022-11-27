@@ -6,6 +6,11 @@ import { storeToRefs } from 'pinia';
 import { watch, computed } from 'vue';
 
 const getClients = async (page: number): Promise<Client[]> => {
+
+    await new Promise(resolve => {
+        setTimeout(() => resolve(true), 1500);
+    })
+    
     const { data } = await clientApi.get<Client[]>(`/clients?_page=${page}`);
     return data;
 }
@@ -30,6 +35,7 @@ const useCLientd = () => {
         isError,
         isLoading,
         clients,
+        loading: store.loading,
         currentPage,
         totalPages,
         getPages(page: number) {
