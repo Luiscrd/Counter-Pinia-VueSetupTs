@@ -29,7 +29,7 @@ const useCLientd = () => {
 
     watch(data, clients => {
         if (clients) store.setClients(clients);
-    })
+    }, {immediate: true})
 
     return {
         isError,
